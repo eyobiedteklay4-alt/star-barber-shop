@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Star Barber Shop </title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Poppins,sans-serif;
+background:#111;
+color:white;
+}
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:#000;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+}
+
+.logo{
+font-size:28px;
+font-family:Cinzel;
+color:gold;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+transition:.3s;
+}
+
+nav a:hover{
+color:gold;
+}
+
+.hero{
+height:100vh;
+background:url("https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1600&q=80") center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero div{
+background:rgba(0,0,0,.6);
+padding:40px;
+border-radius:10px;
+}
+
+.hero h1{
+font-size:60px;
+font-family:Cinzel;
+color:gold;
+}
+
+.hero p{
+margin:20px 0;
+}
+
+.hero a{
+display:inline-block;
+padding:15px 30px;
+background:gold;
+color:black;
+text-decoration:none;
+font-weight:bold;
+border-radius:5px;
+}
+
+section{
+padding:90px 8%;
+}
+
+h2{
+text-align:center;
+font-family:Cinzel;
+font-size:40px;
+margin-bottom:40px;
+color:gold;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:#222;
+padding:20px;
+border-radius:10px;
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:8px;
+margin-bottom:15px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+}
+
+.gallery img{
+width:100%;
+height:280px;
+object-fit:cover;
+border-radius:10px;
+}
+
+details{
+background:#222;
+padding:15px;
+margin-bottom:15px;
+border-radius:8px;
+}
+
+summary{
+cursor:pointer;
+font-size:20px;
+color:gold;
+font-weight:bold;
+}
+
+.review{
+background:#222;
+padding:20px;
+margin-bottom:20px;
+border-radius:8px;
+}
+
+
+#afspraak {
+    padding: 80px 20px;
+    background: #111;
+}
+
+#afspraak h2 {
+    text-align: center;
+    color: #f0f014;
+    margin-bottom: 10px;
+}
+
+#afspraak p {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.calendly-inline-widget {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.contact{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:40px;
+}
+
+iframe{
+width:100%;
+height:350px;
+border:none;
+border-radius:10px;
+}
+
+footer{
+background:#000;
+text-align:center;
+padding:25px;
+}
+
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+color:white;
+font-size:30px;
+padding:15px;
+border-radius:50%;
+text-decoration:none;
+}
+
+input,textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:5px;
+}
+
+button{
+padding:14px 30px;
+background:gold;
+border:none;
+cursor:pointer;
+font-weight:bold;
+}
+
+/* MOBIEL RESPONSIVE */
+
+@media (max-width: 768px){
+
+header{
+    position:relative;
+    padding:20px 5%;
+    flex-direction:column;
+}
+
+.logo{
+    font-size:24px;
+    margin-bottom:15px;
+}
+
+nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+}
+
+nav a{
+    margin-left:0;
+    font-size:14px;
+}
+
+
+.hero{
+    height:90vh;
+    padding:15px;
+}
+
+.hero div{
+    padding:25px 15px;
+}
+
+.hero h1{
+    font-size:35px;
+}
+
+.hero p{
+    font-size:14px;
+}
+
+
+section{
+    padding:70px 5%;
+}
+
+
+h2{
+    font-size:30px;
+}
+
+
+.cards{
+    grid-template-columns:1fr;
+}
+
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:8px;
+margin-bottom:15px;
+display:block;
+}
+
+.gallery{
+    grid-template-columns:1fr;
+}
+
+.gallery img{
+width:100%;
+height:280px;
+object-fit:cover;
+border-radius:10px;
+display:block;
+}
+
+.contact{
+    grid-template-columns:1fr;
+}
+
+
+iframe{
+    height:300px;
+}
+
+
+.whatsapp{
+    font-size:25px;
+    padding:12px;
+    bottom:20px;
+    right:20px;
+}
+
+}
+
+
+/* kleine gsm zoals iPhone SE */
+
+@media(max-width:400px){
+
+.hero h1{
+    font-size:28px;
+}
+
+nav a{
+    font-size:12px;
+}
+
+h2{
+    font-size:26px;
+}
+
+}
+
+</style>
+
+</head>
+<body>
+
+<header>
+
+<div class="logo">✂ STAR BARBER</div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#diensten">Diensten</a>
+<a href="#over">Over</a>
+<a href="#gallery">Gallery</a>
+<a href="#reviews">Reviews</a>
+<a href="booking.html">Maak een afspraak</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</header>
+
+<section class="hero" id="home">
+
+<div>
+<h1>STAR BARBER SHOP</h1>
+<p>Professionele kapsels, fades en baardverzorging.</p>
+
+<a href="booking.html">Maak een afspraak</a>
+
+</div>
+
+</section>
+
+<section id="diensten">
+
+<h2>Diensten & Prijzen</h2>
+
+<details open>
+<summary>✂ Heren Knippen</summary>
+<p>Modern kapsel met styling.</p>
+<h3>€25</h3>
+</details>
+
+<details>
+<summary>💈 Skin Fade</summary>
+<p>Professionele fade.</p>
+<h3>€28</h3>
+</details>
+
+<details>
+<summary>🧔 Baard Trim</summary>
+<p>Baard trimmen en afwerken.</p>
+<h3>€15</h3>
+</details>
+
+<details>
+<summary>🔥 Knippen + Baard</summary>
+<p>Complete behandeling.</p>
+<h3>€35</h3>
+</details>
+
+</section>
+
+<section id="over">
+
+<h2>Over Ons</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=80">
+<h3>Professioneel</h3>
+<p>Jaren ervaring in moderne kapsels.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=900&q=80">
+<h3>Beste Materialen</h3>
+<p>Wij gebruiken kwaliteitsproducten.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=900&q=80">
+<h3>Top Service</h3>
+<p>Klant staat altijd centraal.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="gallery">
+
+<h2>Gallery</h2>
+
+<div class="gallery">
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1503951458645-643d53bfd90f?auto=format&fit=crop&w=800&q=80">
+
+<img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=800&q=80">
+
+<img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=800&q=80">
+
+</div>
+
+</div>
+
+</section>
+
+<section id="reviews">
+
+<h2>Reviews</h2>
+
+<div class="review">
+⭐⭐⭐⭐⭐
+<p>"Beste barber van de stad!"</p>
+<b>Ahmed</b>
+</div>
+
+<div class="review">
+⭐⭐⭐⭐⭐
+<p>"Top service en heel vriendelijk."</p>
+<b>Yassin</b>
+</div>
+
+<div class="review">
+⭐⭐⭐⭐⭐
+<p>"Mijn vaste kapper."</p>
+<b>Milan</b>
+</div>
+
+
+
+</section>
+
+<section id="contact">
+
+<h2>Contact</h2>
+
+<div class="contact">
+<div>
+
+<h3>📍 Adres</h3>
+
+<p>Stationsstraat 1<br>1000 Brussel</p>
+
+<br>
+
+<h3>📞 Telefoon</h3>
+
+<p>
+<a href="tel:0465203811" style="color:gold;">
+  Bel ons
+</a>
+</p>
+<br>
+
+<h3>🕒 Openingsuren</h3>
+
+<p>Ma - Vr : 09:00 - 19:00</p>
+<p>Zaterdag : 09:00 - 18:00</p>
+<p>Zondag : Gesloten</p>
+
+<br>
+
+<h3>📷 Social Media</h3>
+
+<p>
+<a href="https://www.instagram.com/star_barbershop86/" target="_blank" style="color:gold;">
+Instagram
+</a>
+<a href="https://www.facebook.com/starbarbershop86/" target="_blank" style="color:gold;">
+Facebook
+</a>
+</p>
+
+</div>
+
+<div>
+
+<iframe
+src="https://www.google.com/maps?q=Brussels&output=embed">
+</iframe>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2026 STAR BARBER SHOP</p>
+
+</footer>
+
+<a class="whatsapp"
+href="https://wa.me/0465203811?text=Hallo%20Star%20Barber,%20ik%20wil%20een%20afspraak%20maken."
+target="_blank">
+💬
+</a>
+
+</body>
+</html>
